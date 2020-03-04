@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>A <b>JavaScript program</b>to print <b>K, S</b></p>
+
+<p id="demo"></p>
+
+<script>
+var j = 5;    
+var i = 0; 
+var row, column; 
+var text = "";
+for (row=0; row<=7; row++)
+{
+    for (column=0; column<=7; column++)
+      {
+        if (column == 1 || ((row == column + 1) && column != 0))
+            text += "*";   
+        else if (row == i && column == j)
+           {  
+              text += "*";    
+              i=i+1;  
+              j=j-1;
+           }
+        else
+            text += "&nbsp; &nbsp";   
+}    
+    text += "<br>";    
+}
+
+var result="";    
+for (row=0; row<=7; row++){
+    for (column=0; column<=7; column++){
+        if (((row == 0 || row == 3 || row == 6) && column > 1 && column < 5) || (column == 1 && (row == 1 || row == 2 || row == 6)) || (column == 5 && (row == 0 || row == 4 || row == 5))){
+            result=result+"*";
+        }        
+        else{
+            result=result+"&nbsp; &nbsp";
+        }    
+    }
+    result =result+"<br>"; 
+}
+document.getElementById("demo").innerHTML = text + result; 
+</script>
+
+</body>
+</html>
