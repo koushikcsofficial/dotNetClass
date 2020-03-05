@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>A <b>JavaScript program</b>to print <b>R</b></p>
+
+<p id="demo"></p>
+
+<script>
+var i,j;
+var text="";
+for(i=0;i<7;i++){
+for(j=0;j<7;j++){
+    if(j == 1 || ((i == 0 || i == 3) && j > 0 && j < 5) || ((j == 5 || j == 1) && (i == 1 || i == 2))){
+        text+="*";
+    }else{
+        text+="&nbsp; &nbsp";
+    }
+}
+text+="<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
