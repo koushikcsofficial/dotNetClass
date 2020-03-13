@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Excercise 2</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var number = prompt("Please enter the number","");
+  if(number!=null){
+    number = parseFloat(number)*2;
+    if(!isNaN(number)){
+        document.getElementById("demo").innerHTML =
+        "Result is: " + number+", "+(number+1)+", "+(number+2);
+    }else{
+        document.getElementById("demo").innerHTML =
+        "Invalid Input";
+    }
+  
+  }else{
+        document.getElementById("demo").innerHTML =
+        "Invalid Input";
+    }
+}
+</script>
+
+</body>
+</html>

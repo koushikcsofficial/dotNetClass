@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title></title>
+</head>
+<script type="text/javascript">
+var categories = new Array("Fruits", "Vegetables", "Cars", "Colours", "Flowers", );
+var items = new Array();
+items["Fruits"] = new Array("Bananas", "Apples", "Grapes", "Oranges");
+items["Vegetables"] = new Array("Carrots", "Onions", "Lettuce", "Brocolli");
+items["Cars"] = new Array("BMW", "Ferrari", "Toyota", "Mitsubisi");
+items["Colours"] = new Array("Black", "Yellow", "Blue", "Red");
+items["Flowers"] = new Array("Rose", "Dafodils", "Daisies", "Violets");
+
+
+function resetForm(theForm) {
+  /* reset categories */
+  theForm.categories.options[0] = new Option("Please select a subject", "");
+  for (var i=0; i<categories.length; i++) {
+    theForm.categories.options[i+1] = new Option(categories[i], categories[i]);
+  }
+  theForm.categories.options[0].selected = true;
+  /* reset items */
+  theForm.items.options[0] = new Option("Please select a question", "");
+  theForm.items.options[0].selected = true;
+}
+
+function updateModels(theForm) {
+  var make = theForm.categories.options[theForm.categories.options.selectedIndex].value;
+  var newModels = items[make];
+  theForm.items.options.length = 0;
+  theForm.items.options[0] = new Option("Please select a question", "");
+  for (var i=0; i<newModels.length; i++) {
+    theForm.items.options[i+1] = new Option(newModels[i], newModels[i]);
+  }
+  theForm.items.options[0].selected = true;
+}
+
+</script>
+<body>
+
+<form name="autoSelectForm" action="" method="post">
+<select size="1" name="categories" onchange="updateModels(this.form)">
+</select>
+<select size="1" name="items" onclick = "">
+</select>
+<input type="submit">
+</form>
+<script type="text/javascript">
+  resetForm(document.autoSelectForm);
+</script>
+
+</body>
+</html>

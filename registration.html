@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Registration</title>
+</head>
+<body>
+    <input type="text" placeholder="First Name" id="fname" required><br><br>
+    <input type="text" placeholder="Last Name" id="lname" required><br><br>
+    <input type="number" placeholder="Mobile Number" id="mobile" required><br><br>
+    <input type="number" placeholder="Age" id="age" required><br><br>
+    <input type="text" placeholder="Email" id="email" required><br><br>
+    <input type="password" placeholder="Password" id="pass" required><br><br>
+    <input type="password" placeholder="Confirm Password" id="conpass" required><br><br>
+    <button type="button" onclick="getInputValue();">Validate</button>
+    <p id="display"></p>
+    
+    <script>
+        function getInputValue(){
+            var validation = "";
+            // Selecting the input element and get its value 
+            var fname = document.getElementById("fname").value;
+            var namereg = /^([a-zA-Z]{2,})$/;
+            if(fname.length>2 && fname!=null && namereg.test(fname)){
+                validation+="Valid First Name.<br>";
+            }else{
+                validation+="Invalid First Name.<br>";
+            }
+            var lname = document.getElementById("lname").value;
+            if(lname.length>=2 && lname!=null && namereg.test(lname)){
+                validation+="Valid Last Name.<br>";
+            }else{
+                validation+="Invalid Last Name.<br>";
+            }
+
+            var mobile = document.getElementById("mobile").value;
+            var mobreg = /^[6-9]\d{9}$/;
+            if(mobreg.test(mobile) && mobile!=null){
+                validation+="Valid Mobile.<br>";
+            }else{
+                validation+="Inalid Mobile.<br>";
+            }
+
+
+            var age = document.getElementById("age").value;
+            if(age.length>0 && age.length<3 && age!=null){
+                validation+="Valid age.<br>";
+            }else{
+                validation+="Invalid age.<br>";
+            }
+            var email = document.getElementById("email").value;
+            var emailreg = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,10})(.[a-z]{2,10})$/;
+            if(emailreg.test(email)){
+                validation+="Valid email.<br>";
+            }else{
+                validation+="Invalid email.<br>";
+            }
+            var pass = document.getElementById("pass").value;
+            var passreg = /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/;
+            if(passreg.test(pass) && pass!=null){
+                validation+="Valid Password.<br>";
+            }else{
+                validation+="Password must contain at least one letter, at least one number, and be longer than six charaters.<br>";
+            }
+            var conpass = document.getElementById("conpass").value;
+            if(conpass!=null && conpass==pass){
+                validation+="password and confirm are same.<br>";
+            }else{
+                validation+="Passwords didn't match. Correct it.<br>";
+            }
+
+            // Displaying the value
+            document.getElementById("display").innerHTML = validation;
+        }
+    </script>
+</body>
+</html>

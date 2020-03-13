@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Excercise 4</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var number = prompt("Please enter the number","");
+  if(number!=null){
+    number = parseFloat(number);
+    if(!isNaN(number)){
+        document.getElementById("demo").innerHTML =
+        " The square root of your number is " + Math.sqrt(number);
+    }else{
+        document.getElementById("demo").innerHTML =
+        "Invalid Input";
+    }
+  
+  }else{
+        document.getElementById("demo").innerHTML =
+        "Invalid Input";
+    }
+}
+</script>
+
+</body>
+</html>
