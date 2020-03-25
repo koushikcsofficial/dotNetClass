@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jQuery Ui/jquery-ui.css">
+    <link rel="stylesheet" href="jQuery Ui/jquery-ui.theme.css">
+    <script src="jQuery Ui/jquery-1.12.4.js"></script>
+    <script src="jQuery Ui/jquery-ui.js"></script>
+    <style>
+        #draggable{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            padding: 16px;
+            float:left;
+            margin: 10px;
+        }
+        #droppable{
+            height: 200px;
+            width: 200px;
+            background-color: blueviolet;
+            padding: 16px;
+            float: left;
+            margin: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div id="draggable" class="ui-widget-content">
+        <p id="dragParagraph">Drag this box</p>
+    </div>
+    <div id="droppable" class="ui-widget-content">
+        <p id="dropParagraph">drop the block here</p>
+    </div>
+    <script>
+        $(function(){
+            $("#draggable").draggable();
+            $("#droppable").droppable({
+                drop:function(event,ui){
+                    $(this).addclass("ui-state-highlight").find("p").css("font-color","green").html("dropped!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
