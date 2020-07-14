@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sibling Highlight</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+ 
+<div>
+    <p class="highlight">paragraph 1 with class highlight. must not with green background</p>
+    <p class="highlight">paragraph 2 with class highlight. must not with green background</p>
+    <p class="demo">paragraph 3 with class demo. this should come up with green background</p>
+</div>
+ 
+<script>
+$( "p" ).siblings( ".demo" ).css( "background", "red" );
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,51 @@
+.cbp-af-header {
+	position:fixed !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/*background: #fff;*/
+	
+	z-index: 10000;;
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+    transition: height 0.3s;
+    /*border-bottom:1px solid #e8e9ee !important;*/
+	
+}
+
+.cbp-af-header.cbp-af-header-shrink {
+	
+	transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+	border-bottom:1px solid #e8e9ee;
+	position:fixed;
+    background-color: #fff !important;   
+    opacity:1;
+    box-shadow: 0px 0px 15px 0px rgba(72,73,121,0.15);
+	box-shadow: 0 10px 55px 5px rgba(137, 173, 255, .15) !important;
+    animation: smoothScroll 1s forwards;
+}
+
+@media screen and (max-width:1200px){
+
+
+
+}
+
+@media screen and (max-width:992px){
+    
+    
+
+}	
+@media all and (max-width:768px){
+
+
+}
+@media all and (max-width:480px){
+
+
+
+}

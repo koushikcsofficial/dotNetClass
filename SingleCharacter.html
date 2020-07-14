@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Single Output Print</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+$(document).ready(function(){
+    // Get value on button click and show alert
+    $("#submitBtn").click(function(){
+        var str = $("#inputStr").val();
+        alert(str[0]);
+    });
+});
+</script>
+</head>
+<body>
+    <input type="text" id="inputStr">
+    <button type="button" id="submitBtn">Get First Character of the string</button>
+</body>
+</html>

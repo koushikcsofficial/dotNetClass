@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Max min example</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+<script>
+var array=[9,2,6,1];
+console.log(array);
+largest = array[0], smallest = array[0];
+for(var i=0; i<array.length; i++){
+    if (largest < array[i])
+            largest = array[i];
+    else if (smallest > array[i])
+        smallest = array[i];
+}
+console.log("Largest number is: "+largest);
+console.log("Smallest number is: "+smallest);
+</script>
+ 
+</body>
+</html>

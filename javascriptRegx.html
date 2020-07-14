@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="EmpName" placeholder="Name" /><br /><br />
+
+        <input type="number" id="EmpMobile" placeholder="Mobile" /><br /><br />
+
+        <input type="text" id="EmpEmail" placeholder="Email" /><br /><br />
+
+        <button onclick="Validate()" type="button">Submit Form</button>
+    </div>
+
+    <script>
+        function Validate(){
+            var name = document.getElementById("EmpName").value;
+            var mobile = document.getElementById("EmpMobile").value;
+            var email = document.getElementById("EmpEmail").value;
+
+            var MobileRegx = /^[6-9]\d{9}$/;
+            var NameRegx = /^[E00]\w+$/;
+            var EmailRegX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            /*
+                ^     #Match the beginning of the string
+                [789] #Match a 7, 8 or 9
+                \d    #Match a digit (0-9 and anything else that is a "digit" in the regex engine)
+                {9}   #Repeat the previous "\d" 9 times (9 digits)
+                $     #Match the end of the string
+            */
+
+            if(NameRegx.test(name)){
+                alert("Valid Username");
+            }else{
+                alert("Invalid Username");
+            }
+        }
+    </script>
+</body>
+</html>
