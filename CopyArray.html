@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery copy array example</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+<script>
+var a1 = [1,2,3,4,5];
+a1.push(22);
+a1.push(10);
+var a2 = [];
+a2.splice(a2.length, 0, ...a1);
+console.log(a2)
+alert("Array is: "+a2);
+</script>
+ 
+</body>
+</html>
